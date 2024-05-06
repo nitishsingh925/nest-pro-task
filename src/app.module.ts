@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 import { IsUniqueConstraint } from './shared/validation/is-unique.constraints';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { IsUniqueConstraint } from './shared/validation/is-unique.constraints';
       synchronize: true,
     }),
     UsersModule,
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService, IsUniqueConstraint],
