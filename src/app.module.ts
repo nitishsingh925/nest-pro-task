@@ -8,6 +8,7 @@ import { User } from './users/entities/user.entity';
 import { IsUniqueConstraint } from './shared/validation/is-unique.constraints';
 import { TaskModule } from './task/task.module';
 import { Task } from './task/entities/task.entity';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { Task } from './task/entities/task.entity';
     }),
     UsersModule,
     TaskModule,
+    ProjectModule,
   ],
   controllers: [AppController],
   providers: [AppService, IsUniqueConstraint],
