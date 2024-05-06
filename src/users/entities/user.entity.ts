@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Task } from 'src/task/entities/task.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class User {
@@ -10,4 +17,8 @@ export class User {
 
   @Column()
   name!: string;
+
+  @OneToOne(() => Task)
+  @JoinColumn()
+  task: Task;
 }
