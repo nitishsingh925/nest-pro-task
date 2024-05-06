@@ -9,6 +9,7 @@ import { IsUniqueConstraint } from './shared/validation/is-unique.constraints';
 import { TaskModule } from './task/task.module';
 import { Task } from './task/entities/task.entity';
 import { ProjectModule } from './project/project.module';
+import { Project } from './project/entities/project.entity';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { ProjectModule } from './project/project.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [User, Task],
+      entities: [User, Task, Project],
       synchronize: true,
     }),
     UsersModule,
