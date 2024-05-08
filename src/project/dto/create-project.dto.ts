@@ -12,4 +12,6 @@ export class CreateProjectDto {
   @MaxLength(250)
   @IsNotEmpty()
   description: string;
+
+  user: number;
 }
